@@ -8,8 +8,8 @@ black = (0,0,0)
 red = (200,0,0)
 light_red = (255,0,0)
 
-screen_width=600
-screen_height=800
+screen_width=1024
+screen_height=786
 
 Exit = False
 
@@ -65,6 +65,9 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
 
             if action == "confirm":
                 confirm_pet()
+            if action == "Pet":
+                __import__('store and pack')
+                
 
             #if action == "main":
              #   welcome_screen()
@@ -83,7 +86,7 @@ def home_screen():
 
             message_to_screen("Hi User!", black, -300)            
 
-             button("Pet", 50,200,500,200, red, light_red, action="None")
+            button("Pet", 50,200,500,200, red, light_red, action="Pet")
             button("Answer", 50,500,500,200, red, light_red, action="None")
             pygame.display.update()
             

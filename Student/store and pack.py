@@ -87,8 +87,8 @@ def store_button(text, x, y, width, height, inactive_color, active_color, action
         if click[0] == 1 and action != None:
             if action == "1" and money >=10 and packitems[0] == False:
                 money -= 10
-                Display.fill(white)
-                pygame.display.update()
+##                Display.fill(white)
+##                pygame.display.update()
                 packitems[0] = True
             elif action == "2" and money >=20 and packitems[1] == False:
                 money -= 20
