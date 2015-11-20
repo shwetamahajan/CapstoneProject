@@ -10,7 +10,7 @@ red = (255,0,0)
 green = (0,155,0)
 
 display_width = 800
-display_height = 600
+display_height = 400
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 clock = pygame.time.Clock()
@@ -39,7 +39,7 @@ largeFont = pygame.font.SysFont("comicsansms", 80)
 
 def randAppleGen():
     randAppleX = round(random.randrange(0, display_width-block_size))#/10.0)*10.0
-    randAppleY = 50
+    randAppleY = 10
     return randAppleX,randAppleY
 def gameIntro():
     intro = True
@@ -62,7 +62,7 @@ def gameIntro():
                 
         gameDisplay.fill(white)
         message_to_screen("Catch as Much Food as you Can!", green, -100, "small")
-        message_to_screen("Move left and right", black, +10, "small")
+        message_to_screen("Tap to move and change direction", black, +10, "small")
         message_to_screen("Good Luck!", black, +60, "small")
         message_to_screen("Click to Start!", black, +110, "small")
         pygame.display.update()
@@ -95,7 +95,7 @@ def gameLoop():
     gameExit = False
     gameOver = False
     lead_x = display_width/2
-    lead_y = display_height-100
+    lead_y = display_height-50
     lead_a = 50
     lead_x_change = 0
     lead_y_change = 0
@@ -116,7 +116,7 @@ def gameLoop():
             gameDisplay.fill(white)
             #message_to_screen("Game over", red, -50, size="large")
             message_to_screen("You Caught "+str(pointNum)+" Food!",black, 50, size="medium")
-            a = gameDisplay.blit(play, (display_width/2, display_height-200))
+            a = gameDisplay.blit(play, (display_width/2, display_height-90))
             b = gameDisplay.blit(button, (0, 0))
             pygame.display.update()
             
@@ -177,7 +177,7 @@ def gameLoop():
         
         gameDisplay.fill(white)
         
-        message_to_screen(str(pointNum), black, -200, "large")
+        message_to_screen(str(pointNum), black, -150, "large")
 
         gameDisplay.blit(appleImg, (randAppleX,lead_a))
         lead_a_change = 10
