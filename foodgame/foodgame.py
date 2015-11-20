@@ -101,6 +101,7 @@ def gameLoop():
     lead_y_change = 0
     lead_a_change = 10
     pointNum = 0
+    misses = 0
 
     goRight = True
     
@@ -167,7 +168,10 @@ def gameLoop():
         
         if pointNum >= 5: #limit of catches
             gameOver = True
-                
+
+        if misses >= 3: #of misses
+            gameOver = True
+         
         lead_x += lead_x_change
         lead_y += lead_y_change
         
@@ -181,6 +185,7 @@ def gameLoop():
 
         if lead_a >= display_height:
             randAppleX,lead_a = randAppleGen()
+            misses += 1
         
         snakeHead = []
         snakeHead.append(lead_x)
