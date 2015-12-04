@@ -1,3 +1,4 @@
+#student app interface
 import pygame
 
 pygame.init()
@@ -7,9 +8,11 @@ black = (0,0,0)
 
 red = (200,0,0)
 light_red = (255,0,0)
+cqorange = (254,197,2)
+cqblue = (60,129,248)
 
-screen_width=1024
-screen_height=786
+screen_width=800
+screen_height=400
 
 Exit = False
 
@@ -19,7 +22,7 @@ screen = pygame.display.set_mode((screen_width,screen_height))
 screen.fill(white)
 pygame.display.update()
 
-pygame.display.set_caption('Virtual Classroom Pet')
+pygame.display.set_caption('Class Quest')
 
 smallfont = pygame.font.SysFont(None, 25)
 medfont = pygame.font.SysFont(None, 50)
@@ -65,17 +68,14 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
 
             if action == "confirm":
                 confirm_pet()
-            if action == "Pet":
-                __import__('store and pack')
-                
 
-            #if action == "main":
-             #   welcome_screen()
             
     else:
         pygame.draw.rect(screen, inactive_color, (x,y,width,height))
 
     text_to_button(text,black,x,y,width,height)
+
+#Functions
 
 #Home Page
 def home_screen():
@@ -84,10 +84,10 @@ def home_screen():
     while home:
         for event in pygame.event.get():
 
-            message_to_screen("Hi User!", black, -300)            
+            message_to_screen("Hi User!", black, -150)            
 
-            button("Pet", 50,200,500,200, red, light_red, action="Pet")
-            button("Answer", 50,500,500,200, red, light_red, action="None")
+            button("Pet", 100,100,250,250, cqorange, cqblue, action="None")
+            button("Answer", 450,100,250,250, cqorange, cqblue, action="None")
             pygame.display.update()
             
 #home_screen()
@@ -100,10 +100,10 @@ def confirm_pet():
 
     while Question:
         for event in pygame.event.get():
-            message_to_screen("Are you sure", black, -250)
-            message_to_screen("you want this companion?", black, -200)
-            button("Yes", 50,300,500,100, red, light_red, action="home")
-            button("No", 50,500,500,100, red, light_red, action="create")
+            message_to_screen("Are you sure", black, -180)
+            message_to_screen("you want this companion?", black, -150)
+            button("Yes", 100,100,250,250, cqorange, cqblue, action="home")
+            button("No", 450,100,250,250, cqorange, cqblue, action="create")
             pygame.display.update()
 
 #confirm_pet()
@@ -116,15 +116,15 @@ def create_pet():
     #print("Start loop")
     while Pet:
         for event in pygame.event.get():
-            message_to_screen("Meet your new friend!!", black, -300)  
-            button("Human", 50,200,500,100, red, light_red, action="confirm")
-            button("Creature", 50,400,500,100, red, light_red, action="confirm")
-            button("Animal", 50,600,500,100, red, light_red, action="confirm")
+            message_to_screen("Meet your new friend!!", black, -150)  
+            button("Human", 50,100,200,250, cqorange, cqblue, action="confirm")
+            button("Creature", 300,100,200,250, cqorange, cqblue, action="confirm")
+            button("Animal", 550,100,200,250, cqorange, cqblue, action="confirm")
             pygame.display.update()
 
 #create_pet()
 
-#Welcome Screen
+
 def welcome_screen():
 
     intro = True
@@ -133,7 +133,7 @@ def welcome_screen():
 
             message_to_screen("Press Start!", black)            
 
-            button("Start", 50,500,500,50, red, light_red, action="create")
+            button("Start", 250,250,300,50, cqorange, cqblue, action="create")
             pygame.display.update()
 
 welcome_screen()
