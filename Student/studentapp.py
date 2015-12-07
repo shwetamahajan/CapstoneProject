@@ -86,8 +86,10 @@ def home_screen():
 
             message_to_screen("Hi User!", black, -150)            
 
-            button("Pet", 100,100,250,250, cqorange, cqblue, action="None")
-            button("Answer", 450,100,250,250, cqorange, cqblue, action="None")
+            button("Pet", 200,100,150,150, cqorange, cqblue, action="None")
+            button("Answer", 450,100,150,150, cqorange, cqblue, action="None")
+            button("Menu", 50,250,100,100, cqorange, cqblue, action="home")
+            button("Bag", 650,250,100,100, cqorange, cqblue, action="None")
             pygame.display.update()
             
 #home_screen()
