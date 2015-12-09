@@ -26,6 +26,12 @@ screen = pygame.display.set_mode((screen_width,screen_height))
 screen.fill(white)
 pygame.display.update()
 
+#Logo
+Logo = pygame.image.load("LogoImg.png")
+newLogo = pygame.transform.scale(Logo, (200,175))
+CQ = pygame.image.load("CQ.png")
+newCQ = pygame.transform.scale(CQ, (500,300))
+
 pygame.display.set_caption('Class Quest- Teacher Edition')
 
 
@@ -88,8 +94,8 @@ def menu_screen():
     while menu:
         for event in pygame.event.get():
             screen.fill(white)
-            button("Stats", 350,200,100,50, cqorange, cqblue, action="menu")
-            button("Questions", 450,200,100,50, cqorange, cqblue, action="question")
+            button("Stats", 0,200,screen_width/2,50, cqblue, cqblue, action="None")
+            button("Questions", screen_width/2,200,screen_width/2,50, cqorange, cqblue, action="question")
 
 #student section headers
             screen_text("Student", red, 350,280, "small")
