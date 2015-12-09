@@ -68,6 +68,8 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
 
             if action == "confirm":
                 confirm_pet()
+            elif action == "Store":
+                __import__('store and pack')
 
             
     else:
@@ -86,10 +88,9 @@ def home_screen():
 
             message_to_screen("Hi User!", black, -150)            
 
-            button("Pet", 200,100,150,150, cqorange, cqblue, action="None")
-            button("Answer", 450,100,150,150, cqorange, cqblue, action="None")
-            button("Menu", 50,250,100,100, cqorange, cqblue, action="home")
-            button("Bag", 650,250,100,100, cqorange, cqblue, action="None")
+            button("Pet", 200,100,150,150, cqorange, cqblue, action= "None")
+            button("Answer", 450,100,150,150, cqorange, cqblue, action= "None")
+            button("Store", 650,250,100,100, cqorange, cqblue, action= "Store")
             pygame.display.update()
             
 #home_screen()
