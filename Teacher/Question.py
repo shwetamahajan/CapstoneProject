@@ -52,8 +52,9 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
         pygame.draw.rect(Display, active_color, (x,y,width,height))
         if click[0] == 1 and action != None:
             if action == "Stats":
-                Display.fill(white)
+                __import__('stats')
             elif action == "Send":
+                Display.fill(white)
                 main()
     else:
         pygame.draw.rect(Display, inactive_color, (x,y,width,height))

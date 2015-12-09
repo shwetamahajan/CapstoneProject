@@ -83,7 +83,7 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
                 menu_screen()
 
             if action == "question":
-                pass
+                __import__('Question')
 
     else:
         pygame.draw.rect(screen, inactive_color, (x,y,width,height))
