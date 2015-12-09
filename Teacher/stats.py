@@ -7,6 +7,12 @@ import pygame
 
 pygame.init()
 
+#Logo
+Logo = pygame.image.load("LogoImg.png")
+newLogo = pygame.transform.scale(Logo, (200,175))
+CQ = pygame.image.load("CQ.png")
+newCQ = pygame.transform.scale(CQ, (500,300))
+
 white = (255,255,255)
 black = (0,0,0)
 
@@ -25,6 +31,8 @@ Pet = False
 screen = pygame.display.set_mode((screen_width,screen_height))
 screen.fill(white)
 pygame.display.update()
+
+
 
 pygame.display.set_caption('Class Quest- Teacher Edition')
 
@@ -83,13 +91,16 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
     text_to_button(text,black,x,y,width,height)
 
 def menu_screen():
-    menu = True
 
+    menu = True
+    screen.blit(newLogo, (0,10))   
+    screen.blit(newLogo, (800,10))
+    screen.blit(newCQ, (250,-50))
     while menu:
         for event in pygame.event.get():
             screen.fill(white)
-            button("Stats", 350,200,100,50, cqorange, cqblue, action="menu")
-            button("Questions", 450,200,100,50, cqorange, cqblue, action="question")
+            button("Stats", 0,200,screen_width/2,50, cqblue, cqblue, action="None")
+            button("Questions", screen_width/2,200,screen_width/2,50, cqorange, cqblue, action="question")
 
 #student section headers
             screen_text("Student", red, 350,280, "small")
@@ -107,7 +118,7 @@ def menu_screen():
             screen_text("Mike", black, 350,600, "small")
 
 #student pet level
-            screen_text("5", black, 500,350, "small")
+            screen_text("6", black, 500,350, "small")
             screen_text("1", black, 500,400, "small")
             screen_text("2", black, 500,450, "small")
             screen_text("3", black, 500,500, "small")
@@ -115,7 +126,7 @@ def menu_screen():
             screen_text("4", black, 500,600, "small")
             
 #student pet experience
-            screen_text("85%", black, 600,350, "small")
+            screen_text("0%", black, 600,350, "small")
             screen_text("10%", black, 600,400, "small")
             screen_text("25%", black, 600,450, "small")
             screen_text("55%", black, 600,500, "small")
@@ -163,20 +174,8 @@ def menu_screen():
 
 
             pygame.display.update()
-#menu_screen()
+menu_screen()
 
-def welcome_screen():
-
-    intro = True
-    while intro:
-        for event in pygame.event.get():
-
-            message_to_screen("Press Start!", black, 100)
-
-            button("Start", 250,600,500,100, cqorange, cqblue, action="menu")
-            pygame.display.update()
-
-welcome_screen()
 
 
 #Exit doesnt work

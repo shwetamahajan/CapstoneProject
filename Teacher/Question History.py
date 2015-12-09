@@ -52,7 +52,11 @@ def button(text, x, y, width, height, inactive_color, active_color, action = Non
         pygame.draw.rect(Display, active_color, (x,y,width,height))
         if click[0] == 1 and action != None:
             if action == "Stats":
+<<<<<<< HEAD
                 __import__('stats')
+=======
+                pass
+>>>>>>> origin/master
             elif action == "Send":
                 main()
     else:
@@ -79,6 +83,7 @@ def main():
 
     i = 0;
     clock = pygame.time.Clock()
+    Display.fill(white)
     Display.blit(newLogo, (0,10))   
 
     Display.blit(newLogo, (800,10))
